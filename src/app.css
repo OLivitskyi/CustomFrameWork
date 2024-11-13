@@ -36,7 +36,7 @@ header h1 {
     color: #0056b3;
 }
 
-/* Input for adding new tasks */
+/* TextInput for adding new tasks */
 .new-todo {
     width: 100%;
     padding: 12px;

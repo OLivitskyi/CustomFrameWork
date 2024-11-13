@@ -1,6 +1,6 @@
 import { CustomFramework } from "../../../framework/CustomFramework"
 
-import { Input } from "./Input"
+import { TextInput } from "./TextInput"
 
 export function Item({ key = null, children }) {
     const [text, setText] = CustomFramework.useState(children[0].title)

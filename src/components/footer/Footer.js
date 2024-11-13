@@ -1,7 +1,7 @@
 
 import { CustomFramework } from '../../../framework/CustomFramework';
 
-import { filter } from '../../helper/filter';
+import { filter } from './Filter';
 
 export function Footer({items,setItems}){
 

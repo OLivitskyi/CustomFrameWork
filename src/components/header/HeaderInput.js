@@ -1,6 +1,6 @@
 import { CustomFramework } from "../../../framework/CustomFramework"
 
-export function Input({setItems}) {
+export function HeaderInput({setItems}) {
     const [text, setText] = CustomFramework.useState("")
     return (
         <div>

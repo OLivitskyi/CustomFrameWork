@@ -1,6 +1,6 @@
 import { CustomFramework } from "../../../framework/CustomFramework"
 
-export function Input(props) {
+export function TextInput(props) {
 
     const [text, setText] = CustomFramework.useState(props)
     return (

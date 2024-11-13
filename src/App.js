@@ -2,7 +2,7 @@ import { CustomFramework } from "../framework/CustomFramework"
 import { Footer } from "./components/footer/Footer"
 import { Header } from "./components/header/Header"
 
-import { filter } from "./helper/filter"
+import { filter } from "./components/footer/Filter"
 
 export function App() {
   const [items, setItems] = CustomFramework.useState([
