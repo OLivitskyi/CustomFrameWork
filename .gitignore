@@ -1,0 +1,174 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Dependency directories
+node_modules/
+bower_components/
+jspm_packages/
+
+# Build output directories
+dist/
+build/
+out/
+public/
+temp/
+.tmp/
+.eslintcache
+.stylelintcache
+.cache/
+.cache-loader/
+.vite/
+.vitepress/dist/
+storybook-static/
+
+# Testing
+coverage/
+.nyc_output/
+*.lcov
+*.lcov.info
+
+# Environment files
+.env
+.env.local
+.env.*.local
+.env.production
+.env.development
+.env.test
+
+# IDEs and editors
+.idea/
+.vscode/
+*.swp
+*.sublime-workspace
+*.sublime-project
+*.code-workspace
+
+# System files
+.DS_Store
+Thumbs.db
+desktop.ini
+*.pid
+*.pid.lock
+
+# MacOS specific files
+.AppleDouble
+.LSOverride
+._*
+
+# Windows specific files
+Thumbs.db
+ehthumbs.db
+
+# Archives and compressed files
+*.zip
+*.tar
+*.tgz
+*.rar
+*.7z
+*.gz
+*.bz2
+
+# Packages
+*.dmg
+*.exe
+*.msi
+*.deb
+*.rpm
+
+# Images and assets
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.webp
+*.svg
+
+# Fonts
+*.ttf
+*.otf
+*.woff
+*.woff2
+*.eot
+
+# Build artifact files
+*.js.map
+*.jsx.map
+*.css.map
+*.html.map
+*.json.map
+*.ts.map
+*.d.ts
+
+# Transpiled files
+*.min.js
+*.min.css
+*.bundle.js
+*.bundle.css
+
+# Static files and assets
+/static/
+*.md.cache
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.old
+*.swp
+*.swo
+*.save
+
+# Lock files
+*.lock
+
+# CI/CD and deployment
+.dockerignore
+docker-compose.override.yml
+node_modules.zip
+yarn.lock
+pnpm-lock.yaml
+
+# SASS/SCSS cache
+.sass-cache/
+*.scssc
+
+# Typescript
+*.tsbuildinfo
+*.tscache
+
+# Babel and Webpack
+.babelrc
+.babelrc.js
+.babelrc.json
+.browserslistrc
+.webpack/
+webpack.config.js
+webpack.config.*.js
+
+# ESLint and Prettier
+.eslintcache
+.prettierignore
+.prettiercache
+
+# Storybook
+node_modules/@storybook/
+.storybook-out/
+
+# Package managers
+yarn-error.log
+.npm/
+.pnpm/
+.pnpm-debug.log
+
+# Others
+.idea/
+local.settings.json
+*.iml
+*.ipr
+*.iws
+*.editorconfig
