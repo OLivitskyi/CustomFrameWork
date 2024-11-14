@@ -1,64 +1,56 @@
-const http = require("http")
-const fs = require("fs")
-const path = require("path")
+const http = require("http");
+const fs = require("fs");
+const path = require("path");
 
-const port = 3000 // Choose any port you like
+const port = 3000;
+
+// Function to serve static files
+const serveFile = (res, filePath, contentType) => {
+  fs.readFile(filePath, (err, data) => {
+    if (err) {
+      res.writeHead(500, { "Content-Type": "text/plain" });
+      res.end("Internal Server Error");
+    } else {
+      res.writeHead(200, { "Content-Type": contentType });
+      res.end(data);
+    }
+  });
+};
 
 // Create a server
 const server = http.createServer((req, res) => {
-  // Handling different routes
-  if (req.url === "/" || req.url === "/index.html") {
-    // Read and serve index.html
-    fs.readFile(path.join(__dirname, "dist", "index.html"), (err, data) => {
-      if (err) {
-        res.writeHead(500, { "Content-Type": "text/plain" })
-        res.end("Internal Server Error")
-      } else {
-        res.writeHead(200, { "Content-Type": "text/html" })
-        res.end(data)
-      }
-    })
-  } else if (req.url === "/bundle.js") {
-    // Read and serve bundle.js
-    fs.readFile(path.join(__dirname, "dist", "bundle.js"), (err, data) => {
-      if (err) {
-        res.writeHead(500, { "Content-Type": "text/plain" })
-        res.end("Internal Server Error")
-      } else {
-        res.writeHead(200, { "Content-Type": "application/javascript" })
-        res.end(data)
-      }
-    })
-  } else if (req.url === "/app.css") {
-    // Read and serve app.css
-    fs.readFile(path.join(__dirname, "dist", "app.css"), (err, data) => {
-      if (err) {
-        res.writeHead(500, { "Content-Type": "text/plain" })
-        res.end("Internal Server Error")
-      } else {
-        res.writeHead(200, { "Content-Type": "text/css" })
-        res.end(data)
-      }
-    })
-  } else if (req.url === "/server.js") {
-    // Read and serve your server-side script if needed
-    fs.readFile(path.join(__dirname, "dist", "server.js"), (err, data) => {
-      if (err) {
-        res.writeHead(500, { "Content-Type": "text/plain" })
-        res.end("Internal Server Error")
-      } else {
-        res.writeHead(200, { "Content-Type": "application/javascript" })
-        res.end(data)
-      }
-    })
-  } else {
-    // Handle 404 - Not Found
-    res.writeHead(404, { "Content-Type": "text/plain" })
-    res.end("404 - Not Found")
-  }
-})
+  const routes = {
+    "/": "index.html",
+    "/index.html": "index.html",
+    "/bundle.js": "bundle.js",
+    "/app.css": "app.css",
+  };
+
+  const contentTypes = {
+    ".html": "text/html",
+    ".js": "application/javascript",
+    ".css": "text/css",
+  };
+
+  const filePath = routes[req.url]
+      ? path.join(__dirname, "dist", routes[req.url])
+      : path.join(__dirname, "dist", req.url);
+
+  const ext = path.extname(filePath);
+  const contentType = contentTypes[ext] || "text/plain";
+
+  // Serve the requested file or return 404
+  fs.exists(filePath, (exists) => {
+    if (exists) {
+      serveFile(res, filePath, contentType);
+    } else {
+      res.writeHead(404, { "Content-Type": "text/plain" });
+      res.end("404 - Not Found");
+    }
+  });
+});
 
 // Start the server
 server.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`)
-})
+  console.log(`Server is running on http://localhost:${port}`);
+});

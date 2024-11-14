@@ -146,9 +146,6 @@ pnpm-lock.yaml
 .babelrc.js
 .babelrc.json
 .browserslistrc
-.webpack/
-webpack.config.js
-webpack.config.*.js
 
 # ESLint and Prettier
 .eslintcache
