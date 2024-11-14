@@ -51,6 +51,7 @@ header h1 {
 
 .new-todo:focus {
     border-color: #007bff;
+    box-shadow: 0 0 3px rgba(0, 123, 255, 0.5);
 }
 
 /* Main section */
@@ -72,11 +73,12 @@ ul.todo-list li {
     justify-content: space-between;
     padding: 12px;
     border-bottom: 1px solid #eee;
-    transition: background-color 0.2s ease;
+    transition: background-color 0.2s ease, transform 0.1s ease;
 }
 
 ul.todo-list li:hover {
     background-color: #f8f9fa;
+    transform: scale(1.01);
 }
 
 /* Completed tasks */
@@ -116,11 +118,12 @@ ul.todo-list li .destroy:hover {
     margin: 0 6px;
     text-decoration: none;
     color: #007bff;
-    transition: color 0.2s ease;
+    transition: color 0.2s ease, text-decoration 0.2s ease;
 }
 
 .filters a:hover {
     color: #0056b3;
+    text-decoration: underline;
 }
 
 .filters a.selected {
@@ -137,9 +140,10 @@ ul.todo-list li .destroy:hover {
     cursor: pointer;
     font-size: 14px;
     padding: 0;
-    transition: color 0.2s ease;
+    transition: color 0.2s ease, transform 0.2s ease;
 }
 
 .clear-completed:hover {
     color: #c0392b;
+    transform: scale(1.05);
 }
